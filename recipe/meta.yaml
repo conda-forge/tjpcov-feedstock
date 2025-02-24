@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tjpcov-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tjpcov-{{ version }}.tar.gz
   sha256: fd4cd437105521e11c7f977d522cdfae75fed6d7e0c06afa599cc7eec8d7a4eb
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run: 
-    - python >=3.8
+    - python >={{ python_min }}
     - scipy
     - numpy
     - jinja2
@@ -33,6 +33,8 @@ requirements:
     - namaster >=1.4.0        
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - tjpcov
 
