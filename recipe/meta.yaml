@@ -1,5 +1,5 @@
 {% set name = "tjpcov" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tjpcov-{{ version }}.tar.gz
-  sha256: f7750523ba443145ef225ed8e6d0fc676af478a752c8f072a76725cbd3e4d364
+  sha256: d269c44fd396ff90f9cb42395904231e879838462c8cf622a6b4252ca494b9b6
 
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
-  number: 2
+  number: 0
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - pip
     - setuptools >=61.0
     - setuptools_scm[toml] >=6.2
-  run: 
+  run:
     - python >={{ python_min }}
     - scipy <1.12
     - numpy
