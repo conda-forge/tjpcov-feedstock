@@ -23,7 +23,7 @@ requirements:
     - setuptools_scm[toml] >=6.2
   run:
     - python >={{ python_min }}
-    - scipy <1.12
+    - scipy
     - numpy
     - jinja2
     - pyyaml
