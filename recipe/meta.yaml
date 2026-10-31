@@ -1,13 +1,13 @@
 {% set name = "tjpcov" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tjpcov-{{ version }}.tar.gz
-  sha256: d269c44fd396ff90f9cb42395904231e879838462c8cf622a6b4252ca494b9b6
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/tjpcov-{{ version }}.tar.gz
+  sha256: 03eb5485d41667690bf52252e83cb09a3cac15a5ac6afc6f95cc88559daa5dfe
 
 
 build:
